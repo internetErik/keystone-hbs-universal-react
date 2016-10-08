@@ -14,7 +14,7 @@ A Keystone project that uses handlebars in combination with react universal rend
 
 ## Other Resources and Inspiration
 
+* [React Router Tutorial](https://github.com/reactjs/react-router-tutorial)
 * [Example Node Server](https://github.com/babel/example-node-server)
   * Includes configuration of babel for node
-* [Ponyfoo: Universal Routing in React with ES6](https://ponyfoo.com/articles/universal-routing-react-es6)
 * [Universal React Boilerplate](https://github.com/cloverfield-tools/universal-react-boilerplate/)
