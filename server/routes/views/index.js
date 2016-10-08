@@ -1,24 +1,25 @@
-var keystone = require('keystone');
-var React = require('react');
-var ReactDOMServer = require('react-dom/server');
-var ReactRouter = require('react-router');
-var Root = require('../../templates/react/Root.jsx');
+import keystone from 'keystone';
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
+import { match, Router, Route, RouterContext, browserHistory } from 'react-router';
+import HomePage from '../../../both/react/pages/HomePage.jsx';
+
 exports = module.exports = function (req, res) {
   
   var props = { title: 'Universal React' };
 
-  ReactRouter.match({
+  match({
     routes: (
-      <ReactRouter.Router history={ReactRouter.browserHistory}>
-        <ReactRouter.Route path='/' component={Root}>
-        </ReactRouter.Route>
-      </ReactRouter.Router>
+      <Router history={browserHistory}>
+        <Route path='/' component={HomePage}>
+        </Route>
+      </Router>
     ),
     location: req.url
   }, function(error, redirectLocation, renderProps) {
     if(renderProps) {
       var html = ReactDOMServer.renderToString(
-        <ReactRouter.RouterContext
+        <RouterContext
           {...renderProps}
           createElement={function (Document, renderProps){
             return <Document {...renderProps} {...props} />;
