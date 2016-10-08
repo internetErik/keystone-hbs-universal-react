@@ -4,7 +4,7 @@ var ReactDOMServer = require('react-dom/server');
 var ReactRouter = require('react-router');
 var Root = require('../../templates/react/Root.jsx');
 exports = module.exports = function (req, res) {
-
+  
   var props = { title: 'Universal React' };
 
   ReactRouter.match({
@@ -21,10 +21,7 @@ exports = module.exports = function (req, res) {
         <ReactRouter.RouterContext
           {...renderProps}
           createElement={function(Document, renderProps) {
-            return (
-              <Document {...props} />
-            );
-            // return <Component {...renderProps} {...props} />;
+            return <Component {...renderProps} {...props} />;
           }}
         />
       );
