@@ -6,5 +6,5 @@ var Root = require('./templates/react/Root.jsx');
 var props = window.PROPS;
 
 ReactDOM.render(
-  React.createElement(Root, props), document.getElementById('app')
+  <Root {...props} />, document.getElementById('app')
 );
