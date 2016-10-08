@@ -17,14 +17,14 @@ keystone.init({
 	'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
-	'views': 'server/templates/views',
+	'views': 'templates/views',
 	'view engine': 'hbs',
 
 	'custom engine': handlebars.create({
 		layoutsDir: 'server/templates/views/layouts',
 		partialsDir: 'server/templates/views/partials',
 		defaultLayout: 'default',
-		helpers: new require('./server/templates/views/helpers')(),
+		helpers: new require('./templates/views/helpers')(),
 		extname: '.hbs',
 	}).engine,
 
@@ -39,7 +39,7 @@ keystone.init({
 });
 
 // Load your project's Models
-keystone.import('server/models');
+keystone.import('models');
 
 // Setup common locals for your templates. The following are required for the
 // bundled templates and layouts. Any runtime locals (that should be set uniquely
@@ -52,7 +52,7 @@ keystone.set('locals', {
 });
 
 // Load your project's Routes
-keystone.set('routes', require('./server/routes'));
+keystone.set('routes', require('./routes'));
 
 // Setup common locals for your emails. The following are required by Keystone's
 // default email templates, you may remove them if you're using your own.
@@ -72,7 +72,7 @@ keystone.set('email locals', {
 });
 
 // Load your project's email test routes
-keystone.set('email tests', require('./server/routes/emails'));
+keystone.set('email tests', require('./routes/emails'));
 
 
 // Switch Keystone Email defaults to handlebars

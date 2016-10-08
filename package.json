@@ -38,10 +38,10 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "mongod": "mongod --dbpath data/db",
-    "start": "node keystone.js",
+    "mongod": "mongod --dbpath mongo_data/db",
+    "start": "node server/index.js",
     "webpack": "webpack -w",
-    "babel": "babel-node keystone.js --presets react,es2015,stage-2",
-    "nodemon": "nodemon keystone.js --exec babel-node --presets react,es2015,stage-2"
+    "babel": "babel-node server/index.js --presets react,es2015,stage-2",
+    "nodemon": "nodemon server/index.js --exec babel-node --presets react,es2015,stage-2"
   }
 }
