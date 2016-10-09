@@ -1,3 +1,5 @@
+var FlowBabelWebpackPlugin = require('flow-babel-webpack-plugin');
+
 module.exports = {
   entry: './client/main.js',
   output: {
@@ -16,5 +18,8 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new FlowBabelWebpackPlugin(),
+  ]
 };
