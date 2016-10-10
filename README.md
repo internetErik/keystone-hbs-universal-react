@@ -8,7 +8,7 @@ A Keystone project that uses handlebars in combination with react universal rend
   * mongoose
 * MongoDB
 * React
-  * React-DOM 
+  * React-DOM
   * React-Router
 * Webpack
 * Babel
@@ -25,8 +25,8 @@ A Keystone project that uses handlebars in combination with react universal rend
 ## Run Project
 
 In different consoles run:
-* `npm run mongo` (for starting the database)
-* `npm run mongod` (for starting the webserver and cms)
+* `npm run mongod` (for starting the database)
+* `npm run nodemon` (for starting the webserver and cms)
 * `npm run webpack` (starting the watch that builds the bundle)
 
 ## Other Resources and Inspiration
