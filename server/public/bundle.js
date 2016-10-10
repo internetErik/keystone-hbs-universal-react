@@ -27273,29 +27273,47 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	console.log(_isomorphicFetch2.default);
-	
 	var AboutPage = function (_React$Component) {
 	  _inherits(AboutPage, _React$Component);
 	
 	  function AboutPage() {
 	    _classCallCheck(this, AboutPage);
 	
-	    return _possibleConstructorReturn(this, (AboutPage.__proto__ || Object.getPrototypeOf(AboutPage)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (AboutPage.__proto__ || Object.getPrototypeOf(AboutPage)).call(this));
+	
+	    _this.state = {
+	      text: 'Loading'
+	    };
+	    return _this;
 	  }
 	
 	  _createClass(AboutPage, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      (0, _isomorphicFetch2.default)('/api/post');
+	      var _this2 = this;
+	
+	      (0, _isomorphicFetch2.default)('/api/post').then(function (r) {
+	        return r.json();
+	      }).then(function (r) {
+	        return _this2.setState({ text: r.response });
+	      });
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'h1',
+	        'section',
 	        null,
-	        'About Page!'
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          'About Page!'
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          this.state.text
+	        )
 	      );
 	    }
 	  }]);
