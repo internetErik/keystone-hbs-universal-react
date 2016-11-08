@@ -27,6 +27,7 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
     "redux": "^3.6.0",
+    "redux-connect": "^4.0.2",
     "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
@@ -45,11 +46,9 @@
     "webpack": "^1.13.2"
   },
   "scripts": {
-    "lint": "eslint .",
     "mongod": "mongod --dbpath mongo_data/db",
-    "start": "node server/index.js",
+    "start": "babel-node server/index.js --presets react,es2015,stage-2",
     "webpack": "webpack -w",
-    "babel": "babel-node server/index.js --presets react,es2015,stage-2",
     "nodemon": "nodemon server/index.js --exec babel-node --presets react,es2015,stage-2"
   }
 }

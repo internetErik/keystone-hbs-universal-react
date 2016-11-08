@@ -6,7 +6,7 @@ export default class HomePage extends React.Component {
     super();
     this.clickHandler = this.clickHandler.bind(this);
   }
-  
+
   clickHandler() {
     alert();
   }

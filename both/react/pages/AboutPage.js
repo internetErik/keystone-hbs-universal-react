@@ -2,7 +2,7 @@ import React from 'react';
 import fetch from 'isomorphic-fetch';
 
 class AboutPage extends React.Component {
-  
+
   constructor() {
     super();
     this.state = {
